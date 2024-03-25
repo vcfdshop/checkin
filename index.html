@@ -1,8 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>VCFD Check-in</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-</head>
+    <head>
+        <title>VCFD Check-in</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <script src="main.js"></script>
+
+    </head>
+
+    <header>
+        <img class="banner" src="assets/images/banner.png" alt="Ventura County Fire Department Banner">
+    </header>
+
+    <body>
+        <div class="form">
+            <label for="email">Work E-Mail address:</label>
+            <input class="checkinShown" type="email" id="email" name="email">
+            <br>
+
+            <label>Full Shift Today?</label>
+            <br>
+            <input type="radio" id="fullshiftyes" name="fullshift" onclick="popReason()"><label for="fullshiftyes">Yes</label>
+            <input type="radio" id="fullshiftno" name="fullshift" onclick="pushReason()"><label for="fullshiftno">No</label>
+            <br>
+            <label class="checkinHidden" for="reason" id="reasonLabel">Reason:</label>
+            <input class="checkinHidden" type="text" id="reason" name="reason">
+            <br>
+            <label class="checkinHidden" for="reason" id="reasonLabelHint">e.g.: "Working until noon", "30 minutes late, family sick"</label>
+            <br>
+
+            <br>
+            <button id="check-in" onclick="startCheckIn()">Check-in</button>
+
+    </body>
+
+    <footer>
+        Copyright 2024 Ventura County Fire Department - MIT License
+        <br>
+        Designed by Cole Morda
+    </footer>
+
 </html>
