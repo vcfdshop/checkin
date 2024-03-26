@@ -85,7 +85,8 @@ async function startCheckIn() {
     document.getElementById("standbyno").value = (standby ? "I am on standby tonight" : "I am not on standby tonight");
     document.getElementById("gform").submit();
 
-    document.getElementById("invisible").onload = function() {
+    document.getElementById("invisible").onload = async function() {
+        await delay(1000);
         window.location.href="confirmation.html";
 
     };
