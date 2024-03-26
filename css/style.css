@@ -1,41 +1,77 @@
+:root {
+    --background-main: white;
+    --color-main: black;
+    --glow-main: 0px;
+    --glow-extend-half: 0px;
+    --glow-extend: 0px;
+    --glow-input: 0px;
+
+}
+
+.dark {
+    --background-main: black;
+    --color-main: white;
+    --glow-main: 2px;
+    --glow-extend-half: 10px;
+    --glow-extend: 20px;
+    --glow-input: 1px;
+
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-main: black;
+        --color-main: white;
+        --glow-main: 2px;
+        --glow-extend-half: 10px;
+        --glow-extend: 20px;
+        --glow-input: 1px;
+    
+    }
+
+}
+
 body {
-    background-color: black;
-    color: white;
+    background-color: var(--background-main);
+    color: var(--color-main);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-shadow: 0px 0px 2px white;
+    text-shadow: 0px 0px var(--glow-main) var(--color-main);
 
 }
 
 @keyframes fadein {
-    0% {opacity: 0%; font-size: 0%; text-shadow: 0px 0px 0px white;}
-    50% {font-size: 225%; text-shadow: 0px 0px 20px white;}
-    100% {opacity: 100%; font-size: 200%; text-shadow: 0px 0px 2px white;}
+    0% {opacity: 0%; font-size: 0%; text-shadow: 0px 0px 0px var(--color-main);}
+    50% {font-size: 225%; text-shadow: 0px 0px var(--glow-extend) var(--color-main);}
+    100% {opacity: 100%; font-size: 200%; text-shadow: 0px 0px var(--glow-main) var(--color-main);}
 
 }
 
 @keyframes fadeout {
-    0% {opacity: 100%; font-size: 200%; text-shadow: 0px 0px 2px white;}
-    100% {opacity: 0%; font-size: 0%; text-shadow: 0px 0px 0px white;}
+    0% {opacity: 100%; font-size: 200%; text-shadow: 0px 0px var(--glow-main) var(--color-main);}
+    100% {opacity: 0%; font-size: 0%; text-shadow: 0px 0px 0px var(--color-main);}
 
 }
 
 @keyframes checkin-fadein {
-    0% {opacity: 0%; font-size: 0%; text-shadow: 0px 0px 0px white; height: 0%;}
-    50% {font-size: 115%; text-shadow: 0px 0px 10px white;}
-    100% {opacity: 100%; font-size: 100%; text-shadow: 0px 0px 2px white; height: 100%;}
+    0% {opacity: 0%; font-size: 0%; text-shadow: 0px 0px 0px var(--color-main); height: 0;}
+    50% {font-size: 115%; text-shadow: 0px 0px var(--glow-extend-half) var(--color-main);}
+    100% {opacity: 100%; font-size: 100%; text-shadow: 0px 0px var(--glow-main) var(--color-main); height: 100%;}
 
 }
 
 @keyframes checkin-fadeout {
-    0% {opacity: 100%; font-size: 100%; text-shadow: 0px 0px 2px white; height: 100%;}
-    100% {opacity: 0%; font-size: 0%; text-shadow: 0px 0px 0px white; height: 0%;}
+    0% {opacity: 100%; font-size: 100%; text-shadow: 0px 0px var(--glow-main) var(--color-main); height: 100%;}
+    100% {opacity: 0%; font-size: 0%; text-shadow: 0px 0px 0px var(--color-main); height: 0;}
 
 }
 
 @keyframes lookatme {
-    0% {font-size: 200%;}
-    50% {font-size: 250%;}
-    100% {font-size: 200%;}
+    0% {margin-left: 0px;}
+    10% {border-color: red; color: red; accent-color: red;}
+    25% {margin-left: -5px;}
+    75% {margin-left: 5px;}
+    90% {border-color: var(--color-main); color: var(--color-main); accent-color: var(--color-main);}
+    100% {margin-left: 1px;}
 
 }
 
@@ -48,17 +84,17 @@ body {
 }
 
 button {
-    background-color: black;
-    border-color: white;
+    background-color: var(--background-main);
+    border-color: var(--color-main);
     border-width: 5px;
     font-size: 200%;
-    color: white;
+    color: var(--color-main);
     text-align: center;
     animation: fadein 1s ease;
     border-style: none none none solid;
     border-radius: 5px;
     transition: 0.35s;
-    text-shadow: 0px 0px 2px white;
+    text-shadow: 0px 0px var(--glow-main) var(--color-main);
 
 }
 
@@ -71,14 +107,15 @@ button {
     animation: fadeout .5s;
     opacity: 0%;
     font-size: 0%;
-    text-shadow: 0px 0px 0px white;
+    text-shadow: 0px 0px 0px var(--color-main);
 
 }
 
 .checkinHidden {
     opacity: 0%;
     font-size: 0%;
-    text-shadow: 0px 0px 0px white;
+    text-shadow: 0px 0px 0px var(--color-main);
+    height: 0;
 
 }
 
@@ -86,7 +123,7 @@ button {
     animation: checkin-fadein 1s ease;
     opacity: 100%;
     font-size: 100%;
-    text-shadow: 0px 0px 2px white;
+    text-shadow: 0px 0px var(--glow-main) var(--color-main);
     height: 100%;
 
 }
@@ -94,7 +131,7 @@ button {
 .checkinShown {
     opacity: 100%;
     font-size: 100%;
-    text-shadow: 0px 0px 2px white;
+    text-shadow: 0px 0px var(--glow-main) var(--color-main);
     height: 100%;
 
 }
@@ -103,16 +140,16 @@ button {
     animation: checkin-fadeout 1s ease;
     opacity: 0%;
     font-size: 0%;
-    text-shadow: 0px 0px 0px white;
-    height: 0%;
+    text-shadow: 0px 0px 0px var(--color-main);
+    height: 0;
 
 }
 
 button:hover {
-    box-shadow: 0px 0px 15px 2px white;
-    background-color: white;
-    color: black;
-    border-color: black;
+    box-shadow: 0px 0px 15px 2px var(--color-main);
+    background-color: var(--color-main);
+    color: var(--background-main);
+    border-color: var(--background-main);
 
 }
 
@@ -138,8 +175,9 @@ input {
     border: ridge;
     border-radius: 3px;
     border-width: 2px;
-    color: white;
-    text-shadow: 0px 0px 1px white;
+    color: var(--color-main);
+    text-shadow: 0px 0px var(--glow-input) var(--color-main);
     outline: none;
+    height: 100%;
 
 }
