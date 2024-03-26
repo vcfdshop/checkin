@@ -16,18 +16,18 @@
 
     <body>
         <div class="form">
-            <form target="invisible" id="gform" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeoIdKlgCfugldQBEK0MF4mKyiYofhS0tJ9KL5erm0TvqWFOA/formResponse">
+            <form target="invisible" id="gform" action="https://docs.google.com/forms/d/e/1FAIpQLScwC9cZeqmrQBXTIVYSL2hfh0tWmIIm7nO8YPE87ZmbJnztgA//formResponse">
                 <label for="email" id="emailLabel">Work E-Mail address:</label>
-                <input class="checkinShown" type="email" id="email" name="entry.314474469">
+                <input class="checkinShown" type="email" id="email" name="entry.1952978349">
                 <br>
 
                 <label id="fullshiftLabel">Full Shift Today?</label>
                 <br>
-                <input type="radio" id="fullshiftyes" name="entry.391049091" onclick="popReason()"><label for="fullshiftyes">Yes</label>
-                <input type="radio" id="fullshiftno" name="entry.391049091" onclick="pushReason()"><label for="fullshiftno">No</label>
+                <input type="radio" id="fullshiftyes" name="entry.463207349" onclick="popReason()"><label for="fullshiftyes">Yes</label>
+                <input type="radio" id="fullshiftno" name="entry.463207349" onclick="pushReason()"><label for="fullshiftno">No</label>
                 <div class="checkinHidden" id="reasonDiv">
                     <label for="reason" id="reasonLabel">Reason:</label>
-                    <input type="text" id="reason" name="entry.1700018592">
+                    <input type="text" id="reason" name="entry.1600439978">
                     <br>
                     <label for="reason" id="reasonLabelHint">e.g.: "Working until noon", "30 minutes late, family sick"</label>
                     <br>
@@ -36,12 +36,15 @@
 
                 <label id="standbyLabel">Standby Tonight?</label>
                 <br>
-                <input type="radio" id="standbyyes" name="entry.54302519"><label for="standbyyes">Yes</label>
-                <input type="radio" id="standbyno" name="entry.54302519"><label for="standbyno">No</label>
+                <input type="radio" id="standbyyes" name="entry.36479357"><label for="standbyyes">Yes</label>
+                <input type="radio" id="standbyno" name="entry.36479357"><label for="standbyno">No</label>
 
             </form>
 
             <button id="check-in" onclick="startCheckIn()">Check-in</button>
+            <br>
+            <br>
+            <button id="overtimeLog" onclick="openOvertimeLog()">Overtime Log</button>
 
             <br>
             <br>

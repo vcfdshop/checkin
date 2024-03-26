@@ -116,3 +116,8 @@ function backToHome() {
     window.location.href="index.html";
 
 }
+
+function openOvertimeLog() {
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdh8C8gRDzOK97pKhXTPc4uJB9pb65OJ6nE_Wb56_x9i0nG0g/viewform", "_blank").focus();
+
+}
