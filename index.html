@@ -19,6 +19,7 @@
             <form target="invisible" id="gform" action="https://docs.google.com/forms/d/e/1FAIpQLScwC9cZeqmrQBXTIVYSL2hfh0tWmIIm7nO8YPE87ZmbJnztgA//formResponse">
                 <label for="email" id="emailLabel">Work E-Mail address:</label>
                 <input class="checkinShown" type="email" id="email" name="entry.1952978349">
+                <label class="checkinHidden" for="email" id="emailRequirement" style="color: red"> Must include '@ventura.org'!</label>
                 <br>
 
                 <label id="fullshiftLabel">Full Shift Today?</label>
@@ -28,6 +29,7 @@
                 <div class="checkinHidden" id="reasonDiv">
                     <label for="reason" id="reasonLabel">Reason:</label>
                     <input type="text" id="reason" name="entry.1600439978">
+                    <label class="checkinHidden" for="email" id="reasonRequirement" style="color: red"> Must not be blank!</label>
                     <br>
                     <label for="reason" id="reasonLabelHint">e.g.: "Working until noon", "30 minutes late, family sick"</label>
                     <br>

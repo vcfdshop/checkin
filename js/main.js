@@ -17,11 +17,17 @@ function startShow(element) {
 
 var postURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeoIdKlgCfugldQBEK0MF4mKyiYofhS0tJ9KL5erm0TvqWFOA/formResponse";
 
-async function showError(button, elements, prevClass = false) {
+async function showError(button, elements, requirement = false) {
     elements.forEach(element => {
         element.style.animation = "lookatme .2s ease 2";
 
     });
+
+    if(requirement) {
+        console.log(requirement);
+        requirement.className = "checkinShow";
+
+    }
 
     await delay(500);
 
@@ -29,9 +35,16 @@ async function showError(button, elements, prevClass = false) {
         // JavaScript hack. Basically tells CSS to be prepared to play the previous animation again.
         // If animation is set to "", some elements that have other animations will replay those animations once the flash is finished, which is ugly.
         element.style.animation = "1";
-        element.style.class = prevClass || element.style.class;
 
     });
+
+    await delay(3000);
+
+    if(requirement) {
+        console.log(requirement);
+        requirement.className = "checkinHide";
+
+    }
 
 }
 
@@ -40,8 +53,9 @@ async function startCheckIn() {
 
     var email = document.getElementById("email");
     var label = document.getElementById("emailLabel");
+    var requirement = document.getElementById("emailRequirement");
     if(email.value == "" || !email.value.includes("@ventura.org")) {
-        showError(button, [email, label]);
+        showError(button, [email, label], requirement);
         return;
 
     }
@@ -57,8 +71,9 @@ async function startCheckIn() {
 
     var reason = document.getElementById("reason");
     var reasonLabel = document.getElementById("reasonLabel");
+    var reasonRequirement = document.getElementById("reasonRequirement");
     if(fsNo.checked && reason.value == "") {
-        showError(button, [reason, reasonLabel]);
+        showError(button, [reason, reasonLabel], reasonRequirement);
         return;
 
     }
@@ -67,7 +82,7 @@ async function startCheckIn() {
     var sbNo = document.getElementById("standbyno");
     var sbLabel = document.getElementById("standbyLabel");
     if(!sbYes.checked && !sbNo.checked) {
-        showError(button, [sbLabel], "");
+        showError(button, [sbLabel]);
         return;
 
     }
